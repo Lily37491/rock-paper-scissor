@@ -1,3 +1,41 @@
 body {
-    background-color: brown;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #ADD8E6;
+}
+
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    color: aliceblue;
+    background-color: black;
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-size: large;
+    margin-bottom: 20px;
+}
+
+button:hover{
+    background-color: rgb(255, 152, 186);
+    color: black;
+    padding: 15px 30px;
+    font-size: large;
+    font-weight: 800;
+}
+
+.player-score,
+.comp-score{
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
 }

@@ -1,4 +1,4 @@
-const playerSelection = prompt("Rock, Paper or Scissors", "Rock");
+//const playerSelection = prompt("Rock, Paper or Scissors", "Rock");
 
 function getComputerChoice() {
     const choice = ["Rock", "Paper", "Scissor"]
