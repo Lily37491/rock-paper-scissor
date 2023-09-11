@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h1>LET THE GAME BEGIN</h1>
+    <h1 id="message">LET THE GAME BEGIN</h1>
     <div>
         <p class="player-score">Player: 0</p>
         <p class="comp-score">Computer: 0</p>
@@ -17,16 +17,16 @@
 
 
     <div>
-    <button>ROCK</button>
-    <button>PAPER</button>
-    <button>Scissor</button>
+    <button id="user-btn" data-choice="rock">ROCK</button>
+    <button id="user-btn" data-choice="paper">PAPER</button>
+    <button id="user-btn" data-choice="scissor">Scissor</button>
     </div>  
 
 
     <h3>Choose your weapon!</h3>
-    <h1>Time left: 10s</h1>
+    <h1 id="timer">Time left: 10s</h1>
 
-    <button>Play</button>
+    <button id="play-btn">Play</button>
 
     <script src="/home/lily/repos/rock-paper-scissor/javascript.js"></script>
 </body>
