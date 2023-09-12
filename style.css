@@ -43,3 +43,9 @@ button:hover{
 #message{
     color: red;
 }
+
+#end-message{
+    color: rgb(57, 66, 15);
+    font-size: 52px;
+    
+}
