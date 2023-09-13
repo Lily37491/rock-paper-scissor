@@ -13,10 +13,68 @@ let computerScore = 0;
 let Round = 0;
 const maxRound = 5;
 const endMessage = document.querySelector("#end-message");
-const playBtn = document.querySelector("#play-btn");
 const timeLeft = document.querySelector("#timer");
 
-playBtn.addEventListener('click', playGame);
+
+    userBtn.forEach(button => {
+        button.addEventListener('click', () => {
+    
+            if (Round >= maxRound){
+                gameEnd();
+                return;
+            }
+            const userChoice = button.getAttribute("data-choice");
+            const computerChoice = getComputerChoice();
+    
+            if(userChoice === computerChoice){
+                message.textContent = "Tie"
+            } else if(userChoice === "rock" && computerChoice === "scissor"||
+                    userChoice === "paper" && computerChoice === "rock"||
+                    userChoice === "scissor" && computerChoice === "paper"){
+                message.textContent = "You get a point";
+                userScore++;
+                playerScore.textContent = `Player: ${userScore}`;
+            }else {
+                message.textContent = "Computer scores a point";
+                computerScore++;
+                compScore.textContent = `Computer: ${computerScore}`;
+            }
+    
+            Round++;
+    
+    
+        })
+    })
+    
+    
+    function gameEnd(){
+        if(userScore > computerScore){
+            message.textContent = "";
+            endMessage.textContent = "YOU WIN!"
+        } else if(computerScore > userScore){
+            message.textContent = ""
+            endMessage.textContent = "YOU LOSE"
+        } else {
+            message.textContent = ""
+            endMessage.textContent = "IT'S A TIE. PLAY AGAIN TO WIN"
+        }
+    }
+    
+    
+document.addEventListener('DOMContentLoaded', () => {
+    const playBtn = document.querySelector("#play-btn");
+    let gameContainer = document.querySelector("#game-container");
+    let preMessage = document.querySelector("#pre-message");
+    let anotherPreMessage = document.querySelector("#another-premessage");
+    playBtn.addEventListener('click', () => {
+        gameContainer.style.display = 'block';
+
+        playBtn.style.display = 'none';
+        preMessage.style.display = 'none';
+        anotherPreMessage.style.display = 'none';
+
+    })
+})
 
 /*function startTimer(){
     let seconds = 30;
@@ -33,54 +91,6 @@ playBtn.addEventListener('click', playGame);
 
 }
 */
-
-function playGame(){
-    startGame()
-}
-function startGame(){
-userBtn.forEach(button => {
-    button.addEventListener('click', () => {
-
-        if (Round >= maxRound){
-            gameEnd();
-            return;
-        }
-        const userChoice = button.getAttribute("data-choice");
-        const computerChoice = getComputerChoice();
-
-        if(userChoice === computerChoice){
-            message.textContent = "Tie"
-        } else if(userChoice === "rock" && computerChoice === "scissor"||
-                userChoice === "paper" && computerChoice === "rock"||
-                userChoice === "scissor" && computerChoice === "paper"){
-            message.textContent = "You get a point";
-            userScore++;
-            playerScore.textContent = `Player: ${userScore}`;
-        }else {
-            message.textContent = "Computer scores a point";
-            computerScore++;
-            compScore.textContent = `Computer: ${computerScore}`;
-        }
-
-        Round++;
-
-
-    })
-})
-}
-
-function gameEnd(){
-    if(userScore > computerScore){
-        message.textContent = "";
-        endMessage.textContent = "YOU WIN!"
-    } else if(computerScore > userScore){
-        message.textContent = ""
-        endMessage.textContent = "YOU LOSE"
-    } else {
-        message.textContent = ""
-        endMessage.textContent = "IT'S A TIE. PLAY AGAIN TO WIN"
-    }
-}
 
 
 
