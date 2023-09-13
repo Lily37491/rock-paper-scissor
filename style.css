@@ -6,6 +6,9 @@ body {
     background-color: #ADD8E6;
 }
 
+#game-container{
+    display: none;
+}
 
 div{
     display: flex;
