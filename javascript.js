@@ -5,26 +5,29 @@ function getComputerChoice() {
 }
 
 const userBtn = document.querySelectorAll("#user-btn");
-const playerScore = document.querySelector(".player-score");
-const compScore = document.querySelector(".comp-score");
-const message = document.querySelector("#message");
+let playerScore = document.querySelector(".player-score");
+let compScore = document.querySelector(".comp-score");
+let message = document.querySelector("#message");
 let userScore = 0;
 let computerScore = 0;
 let Round = 0;
 const maxRound = 5;
-const endMessage = document.querySelector("#end-message");
+let endMessage = document.querySelector("#end-message");
 const playAgainBtn = document.querySelector("#play-again-btn");
 //const timeLeft = document.querySelector("#timer");
 
 function startGame(){
     userBtn.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', game)});
+    }
+
+function game(){
     
             if (Round >= maxRound){
                 gameEnd();
                 return;
             }
-            const userChoice = button.getAttribute("data-choice");
+            let userChoice = this.getAttribute("data-choice");
             const computerChoice = getComputerChoice();
     
             if(userChoice === computerChoice){
@@ -44,10 +47,8 @@ function startGame(){
             Round++;
     
     
-        })
-    })
-} 
-    
+        }
+  
     function gameEnd(){
         if(userScore > computerScore){
             message.textContent = "";
@@ -79,6 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
+playAgainBtn.addEventListener('click', () => {
+    userScore = 0;
+    computerScore = 0;
+    Round = 0;
+    playerScore.textContent = `Player: 0`;
+    compScore.textContent = `Computer: 0`;
+    message.textContent = "5 Round Game";
+    endMessage.textContent = "Choose your weapon";
+    playAgainBtn.style.display = 'none';
+    userBtn.forEach(button => {
+        button.removeEventListener('click', game)
+    })
+    startGame();
+})
 
 
 
