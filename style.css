@@ -10,6 +10,10 @@ body {
     display: none;
 }
 
+#play-again-btn{
+    display: none;
+}
+
 div{
     display: flex;
     justify-content: center;
@@ -51,4 +55,15 @@ button:hover{
     color: rgb(57, 66, 15);
     font-size: 52px;
     
+}
+
+#play-again-btn{
+    color: blue;
+    font-weight: 800;
+    padding: 10px 20px;
+    background-color: aliceblue;
+}
+
+#play-again-btn:hover{
+    padding: 15px 30px;
 }

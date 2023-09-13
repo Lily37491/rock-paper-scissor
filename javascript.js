@@ -13,9 +13,10 @@ let computerScore = 0;
 let Round = 0;
 const maxRound = 5;
 const endMessage = document.querySelector("#end-message");
-const timeLeft = document.querySelector("#timer");
+const playAgainBtn = document.querySelector("#play-again-btn");
+//const timeLeft = document.querySelector("#timer");
 
-
+function startGame(){
     userBtn.forEach(button => {
         button.addEventListener('click', () => {
     
@@ -45,7 +46,7 @@ const timeLeft = document.querySelector("#timer");
     
         })
     })
-    
+} 
     
     function gameEnd(){
         if(userScore > computerScore){
@@ -58,6 +59,8 @@ const timeLeft = document.querySelector("#timer");
             message.textContent = ""
             endMessage.textContent = "IT'S A TIE. PLAY AGAIN TO WIN"
         }
+
+    playAgainBtn.style.display = 'block';
     }
     
     
@@ -68,13 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let anotherPreMessage = document.querySelector("#another-premessage");
     playBtn.addEventListener('click', () => {
         gameContainer.style.display = 'block';
-
         playBtn.style.display = 'none';
         preMessage.style.display = 'none';
         anotherPreMessage.style.display = 'none';
+        startGame();
 
     })
 })
+
+
+
+
+
+
 
 /*function startTimer(){
     let seconds = 30;
