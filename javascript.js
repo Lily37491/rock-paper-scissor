@@ -18,7 +18,7 @@ const timeLeft = document.querySelector("#timer");
 
 playBtn.addEventListener('click', playGame);
 
-function startTimer(){
+/*function startTimer(){
     let seconds = 30;
 
     timer = setInterval(() => {
@@ -32,10 +32,10 @@ function startTimer(){
     },1000);
 
 }
+*/
 
 function playGame(){
     startGame()
-    startTimer();
 }
 function startGame(){
 userBtn.forEach(button => {
